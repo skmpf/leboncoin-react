@@ -1,0 +1,16 @@
+.footer {
+  height: 80px;
+  background-color: #474747;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 19px;
+  line-height: 27px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+a:visited {
+  color: white;
+}
