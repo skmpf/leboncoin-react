@@ -1,44 +1,29 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Search from "./components/Search";
-import Product from "./components/Product";
+
+import Offers from "./containers/Offers";
+import Offer from "./containers/Offer";
 
 function App() {
-  const [offers, setOffers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        "https://leboncoin-api.herokuapp.com/api/offer/with-count"
-      );
-
-      setOffers(response.data.offers);
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, []);
-
-  console.log(offers);
   return (
     <>
-      {isLoading ? (
-        <p>Loading page</p>
-      ) : (
-        <>
-          <Header />
-          <Search />
-          <Product offers={offers} />
-          <Footer />
-        </>
-      )}
+      <Header />
+      <Router>
+        <Switch>
+          <Route path="/offer/:id">
+            <Offer />
+          </Route>
+          <Route path="/">
+            <Offers />
+          </Route>
+        </Switch>
+      </Router>
+      <Footer />
     </>
   );
 }
