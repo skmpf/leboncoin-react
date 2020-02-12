@@ -7,8 +7,8 @@
   color: white;
   font-size: 19px;
   line-height: 27px;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
 }
 a:visited {
