@@ -8,8 +8,11 @@
   font-size: 19px;
   line-height: 27px;
   width: 100%;
-  position: absolute;
+  position: sticky;
   bottom: 0;
+}
+a {
+  color: white;
 }
 a:visited {
   color: white;

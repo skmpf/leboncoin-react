@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
 
 import "../components/css/sign-up.css";
 
 function SignUp() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [token, setToken] = useState("");
+
+  const history = useHistory();
+
+  const fetchToken = async () => {
+    try {
+      await axios
+        .post("https://leboncoin-api.herokuapp.com/api/user/sign_up", {
+          email: email,
+          username: name,
+          password: password
+        })
+        .then(response => {
+          const userToken = response.data.token;
+          console.log(userToken);
+          setToken(userToken);
+          Cookies.set("token", userToken, { expires: 7 });
+        });
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <div className="sign-up">
       <div className="sign-up-infos"></div>
@@ -16,19 +46,51 @@ function SignUp() {
         </li>
         <li>Pseudo *</li>
         <li>
-          <input type="text" name="username" />
+          <input
+            type="text"
+            name="name"
+            required="required"
+            value={name}
+            onChange={event => {
+              setName(event.target.value);
+            }}
+          />
         </li>
         <li>Adresse email *</li>
         <li>
-          <input type="email" name="email" />
+          <input
+            type="email"
+            name="email"
+            required="required"
+            value={email}
+            onChange={event => {
+              setEmail(event.target.value);
+            }}
+          />
         </li>
         <li>Mot de passe *</li>
         <li>
-          <input type="password" name="password" />
+          <input
+            type="password"
+            name="password"
+            required="required"
+            value={password}
+            onChange={event => {
+              setPassword(event.target.value);
+            }}
+          />
         </li>
         <li>Confirmer le mot de passe *</li>
         <li>
-          <input type="password" name="password" />
+          <input
+            type="password"
+            name="confirm"
+            required="required"
+            value={confirm}
+            onChange={event => {
+              setConfirm(event.target.value);
+            }}
+          />
         </li>
         <li>
           <input type="checkbox" />
@@ -38,7 +100,19 @@ function SignUp() {
           </span>
         </li>
         <li>
-          <button>Créer mon Compte Personnel</button>
+          <input
+            type="submit"
+            value="Créer mon Compte Personnel"
+            onClick={event => {
+              event.preventDefault();
+              if (password !== confirm) {
+                alert("Les deux mots de passe doivent être identiques");
+              } else {
+                fetchToken();
+                history.push("/");
+              }
+            }}
+          />
         </li>
       </ul>
     </div>
