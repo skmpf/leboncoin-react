@@ -8,6 +8,8 @@
   font-size: 19px;
   line-height: 27px;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 a:visited {
   color: white;

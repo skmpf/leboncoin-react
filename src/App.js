@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 
 import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
+import SignUp from "./containers/SignUp";
+import SignIn from "./containers/SignIn";
 
 function App() {
   return (
@@ -16,6 +18,12 @@ function App() {
       <Switch>
         <Route path="/offer/:id">
           <Offer />
+        </Route>
+        <Route path="/user/sign_up">
+          <SignUp />
+        </Route>
+        <Route path="/user/sign_in">
+          <SignIn />
         </Route>
         <Route path="/">
           <Offers />
