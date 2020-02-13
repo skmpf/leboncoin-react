@@ -29,7 +29,7 @@ function Offers() {
       <div className="products wrapper">
         {offers.map(offer => {
           return (
-            <Link to="/offer/" {offer.map}>
+            <Link key={offer._id} to={"/offer/" + offer._id}>
               <div className="product">
                 <>
                   {isLoading ? (

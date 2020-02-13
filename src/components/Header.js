@@ -2,6 +2,7 @@ import React from "react";
 
 import "./css/header.css";
 import logo from "../assets/img/leboncoin.png";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,7 +10,11 @@ function Header() {
       <div className="wrapper menu">
         <div>
           <div>
-            <img src={logo} alt="leboncoin-logo" />
+            <Router>
+              <Link to="/">
+                <img src={logo} alt="leboncoin-logo" />
+              </Link>
+            </Router>
           </div>
           <div className="deposer-annonce">
             <i className="far fa-plus-square"></i>

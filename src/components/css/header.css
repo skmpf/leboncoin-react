@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-.header > img {
+.header img {
   height: 30px;
 }
 .menu {
@@ -16,7 +16,9 @@
 .menu > div:first-child {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 618px;
+  height: 100%;
 }
 .deposer-annonce {
   width: 204px;
@@ -39,10 +41,13 @@
 .search-button {
   width: 160px;
   height: 46px;
-  /* border-bottom: solid 4px #f56b2a; */
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+}
+.search-button:hover {
+  border-bottom: solid 4px #f56b2a;
 }
 .search-button > i {
   font-size: 29.15px;

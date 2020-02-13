@@ -11,20 +11,18 @@ import Offer from "./containers/Offer";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Router>
-        <Switch>
-          <Route path="/offer/:id">
-            <Offer />
-          </Route>
-          <Route path="/">
-            <Offers />
-          </Route>
-        </Switch>
-      </Router>
+      <Switch>
+        <Route path="/offer/:id">
+          <Offer />
+        </Route>
+        <Route path="/">
+          <Offers />
+        </Route>
+      </Switch>
       <Footer />
-    </>
+    </Router>
   );
 }
 
