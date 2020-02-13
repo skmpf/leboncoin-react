@@ -1,9 +1,32 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
 import "../components/css/sign-in.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-function SignIn() {
+function SignIn(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const history = useHistory();
+
+  const logIn = async () => {
+    try {
+      await axios
+        .post("https://leboncoin-api.herokuapp.com/api/user/log_in", {
+          email: email,
+          password: password
+        })
+        .then(response => {
+          const token = response.data.token;
+          props.setUser({ token: token });
+          Cookies.set("userToken", token, { expires: 7 });
+        });
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <div className="sign-in">
       <ul className="sign-in-list">
@@ -15,14 +38,38 @@ function SignIn() {
         </li>
         <li>Adresse email</li>
         <li>
-          <input type="email" name="email" />
+          <input
+            type="email"
+            name="email"
+            required="required"
+            value={email}
+            onChange={event => {
+              setEmail(event.target.value);
+            }}
+          />
         </li>
         <li>Mot de passe</li>
         <li>
-          <input type="password" name="password" />
+          <input
+            type="password"
+            name="password"
+            required="required"
+            value={password}
+            onChange={event => {
+              setPassword(event.target.value);
+            }}
+          />
         </li>
         <li>
-          <button>Se connecter</button>
+          <button
+            onClick={event => {
+              event.preventDefault();
+              logIn();
+              history.push("/");
+            }}
+          >
+            Se connecter
+          </button>
         </li>
         <li>
           <p>Vous n'avez pas de compte ?</p>

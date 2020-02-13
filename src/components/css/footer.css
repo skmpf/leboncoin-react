@@ -11,9 +11,9 @@
   position: sticky;
   bottom: 0;
 }
-a {
+.footer a {
   color: white;
 }
-a:visited {
+.footer a:visited {
   color: white;
 }

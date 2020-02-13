@@ -3,8 +3,9 @@ import React from "react";
 import "./css/header.css";
 import logo from "../assets/img/leboncoin.png";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
-function Header() {
+function Header(props) {
   return (
     <div className="header">
       <div className="wrapper menu">
@@ -23,8 +24,24 @@ function Header() {
           </div>
         </div>
         <div className="connection">
-          <i className="far fa-user"></i>
-          <p>Se connecter</p>
+          {props.user !== null ? (
+            <Link to="/">
+              <div
+                onClick={() => {
+                  Cookies.remove("userToken");
+                  props.setUser(null);
+                }}
+              >
+                <i className="far fa-user"></i>
+                <p>Se déconnecter</p>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/user/sign_in">
+              <i className="far fa-user"></i>
+              <p>Se connecter</p>
+            </Link>
+          )}
         </div>
       </div>
     </div>

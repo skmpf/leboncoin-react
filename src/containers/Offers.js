@@ -22,7 +22,6 @@ function Offers() {
     fetchData();
   }, []);
 
-  console.log(offers);
   return (
     <>
       <Search />

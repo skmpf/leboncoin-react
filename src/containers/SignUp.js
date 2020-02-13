@@ -5,16 +5,15 @@ import { useHistory } from "react-router-dom";
 
 import "../components/css/sign-up.css";
 
-function SignUp() {
+function SignUp(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
-  const [token, setToken] = useState("");
 
   const history = useHistory();
 
-  const fetchToken = async () => {
+  const createAccount = async () => {
     try {
       await axios
         .post("https://leboncoin-api.herokuapp.com/api/user/sign_up", {
@@ -23,10 +22,9 @@ function SignUp() {
           password: password
         })
         .then(response => {
-          const userToken = response.data.token;
-          console.log(userToken);
-          setToken(userToken);
-          Cookies.set("token", userToken, { expires: 7 });
+          const token = response.data.token;
+          props.setUser({ token: token });
+          Cookies.set("userToken", token, { expires: 7 });
         });
     } catch (error) {
       alert(error.message);
@@ -108,7 +106,7 @@ function SignUp() {
               if (password !== confirm) {
                 alert("Les deux mots de passe doivent être identiques");
               } else {
-                fetchToken();
+                createAccount();
                 history.push("/");
               }
             }}

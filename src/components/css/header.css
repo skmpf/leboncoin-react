@@ -4,7 +4,6 @@
   display: flex;
   width: 100%;
 }
-
 .header img {
   height: 30px;
 }
@@ -37,7 +36,6 @@
   font-size: 21.75px;
   margin-right: 7px;
 }
-
 .search-button {
   width: 160px;
   height: 46px;
@@ -53,13 +51,23 @@
   font-size: 29.15px;
   margin-right: 7px;
 }
-
 .connection {
   width: 88px;
   height: 49px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+.connection a {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-decoration: none;
+}
+.connection a:visited {
+  text-decoration: none;
+  color: black;
 }
 .connection p {
   font-size: 15px;
