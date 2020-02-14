@@ -28,15 +28,15 @@ function SignIn(props) {
   };
 
   return (
-    <div className="sign-in">
-      <ul className="sign-in-list">
+    <div className="sign-in wrapper">
+      <ul>
         <li>
           <h4>Connexion</h4>
         </li>
+        <li></li>
         <li>
-          <hr />
+          <p>Adresse email</p>
         </li>
-        <li>Adresse email</li>
         <li>
           <input
             type="email"
@@ -48,7 +48,9 @@ function SignIn(props) {
             }}
           />
         </li>
-        <li>Mot de passe</li>
+        <li>
+          <p>Mot de passe</p>
+        </li>
         <li>
           <input
             type="password"

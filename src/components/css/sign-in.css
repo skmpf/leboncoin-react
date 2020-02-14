@@ -1,24 +1,32 @@
 .sign-in {
-  position: absolute;
   width: 715px;
   height: 504px;
-  left: 362px;
-  top: 104px;
+  margin-top: 44px;
+  margin-bottom: 142px;
   background-color: white;
   display: flex;
-  align-items: center;
   justify-content: center;
-  /* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); */
+
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
-.sign-in-list {
+.sign-in ul {
   width: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-/* .sign-in-list li {
-  width: 100%;
-  display: flex;
-  align-items: center;
-} */
+.sign-in li {
+  width: 560px;
+}
+.sign-in input,
+.sign-in button {
+  width: 560px;
+  height: 44px;
+  border-radius: 5px;
+  line-height: 19px;
+  font-size: 16px;
+}
+.sign-in ul li:nth-child(2) {
+  border: 3px solid #f56b2a;
+  margin-bottom: 33px;
+}

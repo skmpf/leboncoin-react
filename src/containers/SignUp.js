@@ -32,7 +32,7 @@ function SignUp(props) {
   };
 
   return (
-    <div className="sign-up">
+    <div className="sign-up wrapper">
       <div className="sign-up-infos"></div>
 
       <ul className="sign-up-list">

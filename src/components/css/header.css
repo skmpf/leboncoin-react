@@ -31,6 +31,7 @@
   margin-bottom: 1px;
   margin-left: 43px;
   margin-right: 30px;
+  text-decoration: none;
 }
 .deposer-annonce > i {
   font-size: 21.75px;
@@ -38,26 +39,34 @@
 }
 .search-button {
   width: 160px;
-  height: 46px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
 }
 .search-button:hover {
-  border-bottom: solid 4px #f56b2a;
+  border-bottom: solid 3px #f56b2a;
 }
 .search-button > i {
   font-size: 29.15px;
   margin-right: 7px;
+}
+.search-button > p {
+  font-size: 18px;
+  margin: 0;
 }
 .connection {
   width: 88px;
   height: 49px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
+
+  justify-content: space-around;
+}
+.connection a div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .connection a {
   display: flex;
@@ -71,7 +80,7 @@
 }
 .connection p {
   font-size: 15px;
-  margin-top: 6px;
+  margin: 6px 0 0 0;
 }
 .connection > i {
   font-size: 20px;

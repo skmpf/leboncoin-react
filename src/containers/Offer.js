@@ -4,6 +4,8 @@ import axios from "axios";
 
 import "../components/css/offer.css";
 
+const moment = require("moment");
+
 function Offer(props) {
   const [offer, setOffer] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +34,11 @@ function Offer(props) {
               <img src={offer.pictures} alt={offer.title} />
               <h3>{offer.title}</h3>
               <p>{offer.price} €</p>
-              <p>{offer.created}</p>
+              <span>
+                {moment(offer.created).format("L") +
+                  " à " +
+                  moment(offer.created).format("LT")}
+              </span>
             </div>
 
             <div className="description">
@@ -42,9 +48,11 @@ function Offer(props) {
           </div>
           <div className="user">
             <p>{offer.creator.account.username}</p>
-            <p>count offers</p>
+            <p>17 annonces en ligne</p>
+            <p></p>
             <div className="buy">
-              <i className="far fa-shopping-cart"></i>Acheter
+              <i className="fas fa-shopping-cart"></i>
+              <span>Acheter</span>
             </div>
           </div>
         </div>

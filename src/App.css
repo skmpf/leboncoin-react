@@ -4,8 +4,43 @@ body {
   font-size: 16px;
   line-height: 19px;
 }
-
+main {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 80px; /* height of your footer */
+}
 .wrapper {
   width: 1000px;
   margin: 0 auto;
+}
+h3 {
+  font-size: 22px;
+  line-height: 26px;
+}
+h4 {
+  font-size: 19px;
+  font-weight: bold;
+}
+button {
+  width: 350px;
+  border-radius: 5px;
+  line-height: 44px;
+  font-size: 16px;
+  font-weight: bold;
+}
+input {
+  font-size: 13px;
+  height: 44px;
+  width: 350px;
+  border-radius: 5px;
+  border: 1px solid #d9e0eb;
+  box-sizing: border-box;
+  margin-bottom: 23px;
+}
+p {
+  font-size: 13px;
+  line-height: 15px;
+  margin-bottom: 19px;
 }

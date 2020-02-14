@@ -8,8 +8,11 @@
   font-size: 19px;
   line-height: 27px;
   width: 100%;
-  position: sticky;
+  position: absolute;
   bottom: 0;
+}
+.footer h4 {
+  font-weight: normal;
 }
 .footer a {
   color: white;

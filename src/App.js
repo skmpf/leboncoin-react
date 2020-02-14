@@ -10,6 +10,7 @@ import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
 import SignUp from "./containers/SignUp";
 import SignIn from "./containers/SignIn";
+import Post from "./containers/Post";
 
 function App() {
   const tokenFromCookie = Cookies.get("userToken");
@@ -22,24 +23,29 @@ function App() {
   console.log("user : " + user);
 
   return (
-    <Router>
-      <Header user={user} setUser={setUser} />
-      <Switch>
-        <Route path="/offer/:id">
-          <Offer />
-        </Route>
-        <Route path="/user/sign_up">
-          <SignUp setUser={setUser} />
-        </Route>
-        <Route path="/user/sign_in">
-          <SignIn setUser={setUser} />
-        </Route>
-        <Route path="/">
-          <Offers />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
+    <main>
+      <Router>
+        <Header user={user} setUser={setUser} />
+        <Switch>
+          <Route path="/offer/post">
+            <Post />
+          </Route>
+          <Route path="/offer/:id">
+            <Offer />
+          </Route>
+          <Route path="/user/sign_up">
+            <SignUp setUser={setUser} />
+          </Route>
+          <Route path="/user/sign_in">
+            <SignIn setUser={setUser} />
+          </Route>
+          <Route path="/">
+            <Offers />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </main>
   );
 }
 

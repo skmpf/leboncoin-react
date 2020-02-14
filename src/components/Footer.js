@@ -4,7 +4,7 @@ import "./css/footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <p>
+      <h4>
         Réplique de leboncoin - Codée par{" "}
         <a
           style={{ textDecoration: "none" }}
@@ -13,7 +13,7 @@ function Footer() {
           Seb
         </a>{" "}
         - <a href="http://LeReacteur.io">LeReacteur.io</a>
-      </p>
+      </h4>
     </div>
   );
 }

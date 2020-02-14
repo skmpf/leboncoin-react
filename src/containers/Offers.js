@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../components/css/offers.css";
 import { Link } from "react-router-dom";
+import nophoto from "../assets/img/nophoto.png";
 
 import Search from "../components/Search";
+
+const moment = require("moment");
 
 function Offers() {
   const [offers, setOffers] = useState([]);
@@ -36,14 +39,18 @@ function Offers() {
                   ) : (
                     <>
                       {offer.pictures === [] ? (
-                        <i className="far fa-mountains"></i>
+                        <img src={nophoto} alt="" />
                       ) : (
                         <img src={offer.pictures} alt={offer.title} />
                       )}
                       <div className="details">
                         <h3>{offer.title}</h3>
-                        <p>{offer.price} €</p>
-                        <p>{offer.created}</p>
+                        {offer.price ? <p>{offer.price} €</p> : <p>0 €</p>}
+                        <span>
+                          {moment(offer.created).format("L") +
+                            " à " +
+                            moment(offer.created).format("LT")}
+                        </span>
                       </div>
                     </>
                   )}

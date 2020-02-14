@@ -1,16 +1,18 @@
 .products {
   margin-top: 40px;
 }
-.products a {
-  color: black;
-  text-decoration: none;
-}
 .product:hover {
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
+.products a {
+  text-decoration: none;
+}
 .products a h3 {
+  color: black;
   font-size: 22px;
   line-height: 26px;
+  margin-top: 15px;
+  margin-bottom: 7px;
 }
 .products a:hover h3 {
   color: #f56b2a;
@@ -31,4 +33,16 @@
   border-radius: 5px 0 0 5px;
   object-position: center;
   object-fit: contain;
+}
+.details {
+  margin-left: 29px;
+}
+.details p:nth-child(2) {
+  color: #f56b2a;
+  font-size: 20px;
+  margin-bottom: 75px;
+  line-height: 23px;
+}
+.details span:last-child {
+  color: black;
 }
