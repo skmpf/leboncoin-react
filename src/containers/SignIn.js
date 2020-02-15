@@ -41,7 +41,7 @@ function SignIn(props) {
           <input
             type="email"
             name="email"
-            required="required"
+            required
             value={email}
             onChange={event => {
               setEmail(event.target.value);
@@ -55,7 +55,7 @@ function SignIn(props) {
           <input
             type="password"
             name="password"
-            required="required"
+            required
             value={password}
             onChange={event => {
               setPassword(event.target.value);
@@ -73,6 +73,7 @@ function SignIn(props) {
             Se connecter
           </button>
         </li>
+        <li></li>
         <li>
           <p>Vous n'avez pas de compte ?</p>
         </li>

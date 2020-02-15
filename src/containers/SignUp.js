@@ -39,57 +39,69 @@ function SignUp(props) {
         <li>
           <h4>Créer un compte</h4>
         </li>
+        <li></li>
         <li>
-          <hr />
+          <p>Pseudo *</p>
         </li>
-        <li>Pseudo *</li>
         <li>
           <input
             type="text"
             name="name"
-            required="required"
+            required
             value={name}
             onChange={event => {
               setName(event.target.value);
             }}
           />
         </li>
-        <li>Adresse email *</li>
+        <li>
+          <p>Adresse email *</p>
+        </li>
         <li>
           <input
             type="email"
             name="email"
-            required="required"
+            required
             value={email}
             onChange={event => {
               setEmail(event.target.value);
             }}
           />
         </li>
-        <li>Mot de passe *</li>
-        <li>
-          <input
-            type="password"
-            name="password"
-            required="required"
-            value={password}
-            onChange={event => {
-              setPassword(event.target.value);
-            }}
-          />
-        </li>
-        <li>Confirmer le mot de passe *</li>
-        <li>
-          <input
-            type="password"
-            name="confirm"
-            required="required"
-            value={confirm}
-            onChange={event => {
-              setConfirm(event.target.value);
-            }}
-          />
-        </li>
+        <div className="password">
+          <ul>
+            <li>
+              <p>Mot de passe *</p>
+            </li>
+            <li>
+              <input
+                type="password"
+                name="password"
+                required
+                value={password}
+                onChange={event => {
+                  setPassword(event.target.value);
+                }}
+              />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>Confirmer le mot de passe *</p>
+            </li>
+            <li>
+              <input
+                type="password"
+                name="confirm"
+                required
+                value={confirm}
+                onChange={event => {
+                  setConfirm(event.target.value);
+                }}
+              />
+            </li>
+          </ul>
+        </div>
         <li>
           <input type="checkbox" />
           <span>

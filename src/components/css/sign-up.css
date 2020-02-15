@@ -5,13 +5,83 @@
   margin-bottom: 142px;
   background-color: white;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 .sign-up-list {
-  width: 560px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.sign-up-list li {
+  margin-bottom: 19px;
+  width: 100%;
+  display: flex;
+}
+.sign-up-list li p,
+.sign-up-list li input,
+.sign-up-list li button {
+  margin-bottom: 0;
+}
+.sign-up-list li p {
+  font-weight: bold;
+}
+.sign-up-list li:first-child {
+  justify-content: center;
+  margin-bottom: 21px;
+}
+.sign-up-list li:nth-child(2) {
+  border: 3px solid #f56b2a;
+  margin-bottom: 33px;
+}
+.sign-up-list li:nth-child(6) {
+  margin-bottom: 22px;
+}
+.password {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.password ul {
+  width: 165px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.password li {
+  display: flex;
+  flex-direction: column;
+}
+.password input {
+  width: 165px;
+}
+.password li:nth-child(2) {
+  border: none;
+  margin-bottom: 35px;
+}
+.sign-up-list li:nth-child(8) {
+  display: inline;
+}
+.sign-up-list li:nth-child(8) input {
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  /* border: solid 3px #f56b2a; */
+}
+.sign-up-list > li:last-child input {
+  /* margin-bottom: 37px; */
+  background: #4183d7;
+  color: white;
+  line-height: 19px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.sign-up-list > li:last-child {
+  margin-bottom: 0;
 }
