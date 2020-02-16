@@ -10,6 +10,8 @@ function Post() {
 
   const token = Cookies.get("userToken");
 
+  console.log(typeof price);
+
   const createPost = async () => {
     try {
       await axios.post(
@@ -64,7 +66,7 @@ function Post() {
         </li>
         <li>
           <input
-            type="text"
+            type="number"
             required
             value={price}
             onChange={event => {
@@ -84,13 +86,9 @@ function Post() {
           <button
             onClick={event => {
               event.preventDefault();
-              if (typeof price === "number") {
-                if (title && description && price) {
-                  createPost();
-                  alert("Annonce postée");
-                }
-              } else {
-                alert("Le prix doit être un nombre entier");
+              if (title && description && price) {
+                createPost();
+                alert("Votre annonce est postée");
               }
             }}
           >
