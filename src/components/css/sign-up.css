@@ -6,15 +6,18 @@
   background-color: white;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+.sign-up > ul {
+  margin-top: 30px;
 }
 .sign-up-list {
   width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 39px;
 }
 .sign-up-list li {
   margin-bottom: 19px;
@@ -75,7 +78,6 @@
   /* border: solid 3px #f56b2a; */
 }
 .sign-up-list > li:last-child input {
-  /* margin-bottom: 37px; */
   background: #4183d7;
   color: white;
   line-height: 19px;
@@ -84,4 +86,37 @@
 }
 .sign-up-list > li:last-child {
   margin-bottom: 0;
+}
+.sign-up-infos {
+  width: 431px;
+  margin-left: 55px;
+}
+.sign-up-infos p {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 0;
+}
+.sign-up-infos i {
+  font-size: 35px;
+  color: #4183d7;
+  width: 68px;
+}
+.sign-up-infos h4 {
+  margin-bottom: 42px;
+}
+.sign-up-infos ul {
+  display: flex;
+  flex-direction: row;
+}
+.sign-up-infos:nth-child(2) ul li p {
+  margin-bottom: 68px;
+}
+.sign-up-infos:nth-child(3) ul li p {
+  margin-bottom: 80px;
+}
+.sign-up-infos > li:nth-child(2) > ul > li:last-child {
+  margin-bottom: 68px;
+}
+.sign-up-infos > li:nth-child(3) > ul > li:last-child {
+  margin-bottom: 68px;
 }

@@ -33,7 +33,54 @@ function SignUp(props) {
 
   return (
     <div className="sign-up wrapper">
-      <div className="sign-up-infos"></div>
+      <ul className="sign-up-infos">
+        <li>
+          <h4>Pourquoi créer un compte ?</h4>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <i className="far fa-clock"></i>
+            </li>
+            <li>
+              <h5>Gagnez du temps</h5>
+              <p>
+                Gagnez du temps Publiez vos annonces rapidement, avec vos
+                informations pré-remplies chaque fois que vous souhaitez déposer
+                une nouvelle annonce.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <i className="far fa-bell"></i>
+            </li>
+            <li>
+              <h5>Soyez les premiers informés</h5>
+              <p>
+                Soyez les premiers informés Créez des alertes Immo ou Emploi et
+                ne manquez jamais l’annonce qui vous intéresse.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <i className="far fa-eye"></i>
+            </li>
+            <li>
+              <h5>Visibilité</h5>
+              <p>
+                Visibilité Suivez les statistiques de vos annonces (nombre de
+                fois où votre annonce a été vue, nombre de contacts reçus).
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
 
       <ul className="sign-up-list">
         <li>
