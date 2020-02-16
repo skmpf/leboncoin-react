@@ -1,14 +1,30 @@
 import React, { useState } from "react";
 import "../components/css/post.css";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 function Post() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
 
-  console.log(title);
-  console.log(description);
-  console.log(price);
+  const token = Cookies.get("userToken");
+
+  const createPost = async () => {
+    try {
+      await axios.post(
+        "https://leboncoin-api-2003.herokuapp.com/offer/publish",
+        {
+          title,
+          description,
+          price
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+    } catch (error) {
+      alert(error.message);
+    }
+  };
 
   return (
     <div className="post wrapper">
@@ -23,7 +39,7 @@ function Post() {
         <li>
           <input
             type="text"
-            required="required"
+            required
             value={title}
             onChange={event => {
               setTitle(event.target.value);
@@ -36,7 +52,7 @@ function Post() {
         <li>
           <input
             type="text"
-            required="required"
+            required
             value={description}
             onChange={event => {
               setDescription(event.target.value);
@@ -49,7 +65,7 @@ function Post() {
         <li>
           <input
             type="text"
-            required="required"
+            required
             value={price}
             onChange={event => {
               setPrice(event.target.value);
@@ -65,7 +81,21 @@ function Post() {
           <span> No file chosen</span>
         </li>
         <li>
-          <button>Valider</button>
+          <button
+            onClick={event => {
+              event.preventDefault();
+              if (typeof price === "number") {
+                if (title && description && price) {
+                  createPost();
+                  alert("Annonce postée");
+                }
+              } else {
+                alert("Le prix doit être un nombre entier");
+              }
+            }}
+          >
+            Valider
+          </button>
         </li>
       </ul>
     </div>

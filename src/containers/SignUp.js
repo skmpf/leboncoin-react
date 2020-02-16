@@ -10,13 +10,14 @@ function SignUp(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const history = useHistory();
 
   const createAccount = async () => {
     try {
       await axios
-        .post("https://leboncoin-api.herokuapp.com/api/user/sign_up", {
+        .post("https://leboncoin-api-2003.herokuapp.com/user/sign_up", {
           email: email,
           username: name,
           password: password
@@ -150,7 +151,12 @@ function SignUp(props) {
           </ul>
         </div>
         <li>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            onChange={event => {
+              setIsChecked(!isChecked);
+            }}
+          />
           <span>
             "J'accepte les Conditions Générales de Vente et les Conditions
             Générales d'Utilisation"
@@ -164,7 +170,9 @@ function SignUp(props) {
               event.preventDefault();
               if (password !== confirm) {
                 alert("Les deux mots de passe doivent être identiques");
-              } else {
+              } else if (!isChecked) {
+                alert("Vous devez accepter les CGV et CGU");
+              } else if (password && confirm && name && email && isChecked) {
                 createAccount();
                 history.push("/");
               }

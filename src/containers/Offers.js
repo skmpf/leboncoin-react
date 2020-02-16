@@ -15,10 +15,10 @@ function Offers() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://leboncoin-api.herokuapp.com/api/offer/with-count"
+        "https://leboncoin-api-2003.herokuapp.com/offer/with-count"
       );
 
-      setOffers(response.data.offers);
+      setOffers(response.data);
       setIsLoading(false);
     };
 

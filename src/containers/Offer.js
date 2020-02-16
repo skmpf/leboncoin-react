@@ -15,7 +15,7 @@ function Offer(props) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://leboncoin-api.herokuapp.com/api/offer/" + id
+        "https://leboncoin-api-2003.herokuapp.com/offer/" + id
       );
       setOffer(response.data);
       setIsLoading(false);

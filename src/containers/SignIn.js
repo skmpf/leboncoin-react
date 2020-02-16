@@ -13,7 +13,7 @@ function SignIn(props) {
   const logIn = async () => {
     try {
       await axios
-        .post("https://leboncoin-api.herokuapp.com/api/user/log_in", {
+        .post("https://leboncoin-api-2003.herokuapp.com/user/log_in", {
           email: email,
           password: password
         })
@@ -66,8 +66,14 @@ function SignIn(props) {
           <button
             onClick={event => {
               event.preventDefault();
-              logIn();
-              history.push("/");
+              if (email && password) {
+                logIn();
+                history.push("/");
+              } else {
+                alert(
+                  "Veuillez entrer votre adresse email et votre mot de passe"
+                );
+              }
             }}
           >
             Se connecter
