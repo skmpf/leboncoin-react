@@ -14,12 +14,28 @@ function Header(props) {
             <img src={logo} alt="leboncoin-logo" />
           </Link>
 
-          <Link to="/offer/post" style={{ textDecoration: "none" }}>
-            <div className="deposer-annonce">
-              <i className="far fa-plus-square"></i>
-              Déposer une annonce
-            </div>
-          </Link>
+          {props.user === null ? (
+            <Link
+              to="/user/sign_in"
+              style={{ color: "black", textDecoration: "none" }}
+            >
+              <div className="deposer-annonce">
+                <i className="far fa-plus-square"></i>
+                Déposer une annonce
+              </div>
+            </Link>
+          ) : (
+            <Link
+              to="/offer/post"
+              style={{ color: "black", textDecoration: "none" }}
+            >
+              <div className="deposer-annonce">
+                <i className="far fa-plus-square"></i>
+                Déposer une annonce
+              </div>
+            </Link>
+          )}
+
           <div className="search-button">
             <i className="fas fa-search"></i>
             <p>Rechercher</p>
@@ -39,7 +55,10 @@ function Header(props) {
               </div>
             </Link>
           ) : (
-            <Link to="/user/sign_in" style={{ textDecoration: "none" }}>
+            <Link
+              to="/user/sign_in"
+              style={{ colore: "black", textDecoration: "none" }}
+            >
               <i className="far fa-user"></i>
               <p>Se connecter</p>
             </Link>

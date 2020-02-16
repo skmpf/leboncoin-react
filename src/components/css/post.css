@@ -40,3 +40,12 @@
 .post ul p {
   font-weight: bold;
 }
+.post textarea {
+  width: 350px;
+  height: 139px;
+  border-radius: 5px;
+  border: 1px solid #d9e0eb;
+  box-sizing: border-box;
+  margin-bottom: 23px;
+  resize: none;
+}

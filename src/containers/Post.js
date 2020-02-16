@@ -52,8 +52,10 @@ function Post() {
           <p>Texte de l'annonce *</p>
         </li>
         <li>
-          <input
+          <textarea
             type="text"
+            // cols="30"
+            // rows="10"
             required
             value={description}
             onChange={event => {
