@@ -49,3 +49,8 @@
   margin-bottom: 23px;
   resize: none;
 }
+.post > ul > li:nth-child(10) > input {
+  width: unset;
+  height: unset;
+  border: none;
+}

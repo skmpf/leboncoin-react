@@ -45,8 +45,26 @@ input {
   box-sizing: border-box;
   margin-bottom: 23px;
 }
+textarea {
+  font-size: 13px;
+}
 p {
   font-size: 13px;
   line-height: 15px;
   margin-bottom: 19px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width 970px) {
+  /* header logo centré, loupe a droite, burger menu a gauche
+  barre de recherche supprimée
+  aside username supprimé 
+  */
+}
+@media (max-width 674px) {
+  /* offres 650x196px */
+}
+@media (max-width 970px) {
+}
+@media (max-width 970px) {
 }

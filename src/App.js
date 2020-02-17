@@ -20,8 +20,6 @@ function App() {
 
   const [user, setUser] = useState(newState);
 
-  console.log("user : " + user);
-
   return (
     <main>
       <Router>

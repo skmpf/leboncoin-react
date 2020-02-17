@@ -38,8 +38,12 @@ function Offers() {
                     <p>Loading page</p>
                   ) : (
                     <>
-                      {offer.pictures === [] ? (
-                        <img src={nophoto} alt="" />
+                      {offer.pictures.length === 0 ? (
+                        <img
+                          style={{ backgroundColor: "#cbd1d8" }}
+                          src={nophoto}
+                          alt=""
+                        />
                       ) : (
                         <img src={offer.pictures} alt={offer.title} />
                       )}

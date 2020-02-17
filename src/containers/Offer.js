@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+import nophoto from "../assets/img/nophoto.png";
 import "../components/css/offer.css";
 
 const moment = require("moment");
@@ -31,7 +31,12 @@ function Offer(props) {
         <div className="wrapper offer">
           <div className="product-item">
             <div className="product-details">
-              <img src={offer.pictures} alt={offer.title} />
+              {offer.pictures.length === 0 ? (
+                <img src={nophoto} alt={offer.title} />
+              ) : (
+                <img src={offer.pictures} alt={offer.title} />
+              )}
+
               <h3>{offer.title}</h3>
               <p>{offer.price} €</p>
               <span>

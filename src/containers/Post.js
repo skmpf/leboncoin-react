@@ -2,25 +2,29 @@ import React, { useState } from "react";
 import "../components/css/post.css";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 
 function Post() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [pictures, setPictures] = useState([]);
 
   const token = Cookies.get("userToken");
-
-  console.log(typeof price);
+  const history = useHistory();
 
   const createPost = async () => {
     try {
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("price", price);
+      formData.append("files", pictures);
+
       await axios.post(
         "https://leboncoin-api-2003.herokuapp.com/offer/publish",
-        {
-          title,
-          description,
-          price
-        },
+        // "http://localhost:3000/offer/publish",
+        formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
     } catch (error) {
@@ -54,8 +58,6 @@ function Post() {
         <li>
           <textarea
             type="text"
-            // cols="30"
-            // rows="10"
             required
             value={description}
             onChange={event => {
@@ -81,8 +83,18 @@ function Post() {
           <p>Photo *</p>
         </li>
         <li>
-          <button>Choose file</button>
-          <span> No file chosen</span>
+          <input
+            type="file"
+            // multiple
+            onChange={event => {
+              // const newPictures = [...pictures];
+              // for (let i = 0; i < event.target.files.length; i++) {
+              //   newPictures.push(event.target.files[i]);
+              // }
+              // setPictures(newPictures);
+              setPictures(event.target.files[0]);
+            }}
+          />
         </li>
         <li>
           <button
@@ -90,7 +102,8 @@ function Post() {
               event.preventDefault();
               if (title && description && price) {
                 createPost();
-                alert("Votre annonce est postée");
+                history.push("/");
+                // alert("Votre annonce est postée");
               }
             }}
           >
