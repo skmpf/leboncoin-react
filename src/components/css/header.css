@@ -43,9 +43,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.search-button::after {
+  border-bottom: 3px solid #f56b2a;
+  bottom: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  /* box-sizing: border-box;  */
 }
 .search-button:hover {
-  border-bottom: solid 3px #f56b2a;
+  /* border-bottom: solid 3px #f56b2a; */
 }
 .search-button > i {
   font-size: 29.15px;
@@ -60,7 +69,6 @@
   height: 49px;
   display: flex;
   flex-direction: column;
-
   justify-content: space-around;
 }
 .connection > a > div {

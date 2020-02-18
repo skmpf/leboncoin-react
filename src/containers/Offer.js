@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import nophoto from "../assets/img/nophoto.png";
 import "../components/css/offer.css";
 
 const moment = require("moment");
 
-function Offer(props) {
+function Offer({ user }) {
   const [offer, setOffer] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
 
+  const history = useHistory();
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://leboncoin-api-2003.herokuapp.com/offer/" + id
+        // "https://leboncoin-api-2003.herokuapp.com/offer/" + id
+        "http://localhost:3000/offer/" + id
       );
       setOffer(response.data);
       setIsLoading(false);
@@ -55,7 +58,19 @@ function Offer(props) {
             <p>{offer.creator.account.username}</p>
             <p>17 annonces en ligne</p>
             <p></p>
-            <div className="buy">
+            <div
+              className="buy"
+              onClick={event => {
+                event.preventDefault();
+                if (user === null) {
+                  history.push("/user/sign_in");
+                } else {
+                  history.push("/payment", {
+                    offer
+                  });
+                }
+              }}
+            >
               <i className="fas fa-shopping-cart"></i>
               <span>Acheter</span>
             </div>
