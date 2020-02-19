@@ -8,8 +8,8 @@ function Post({ user }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [pictures, setPictures] = useState([]);
-
+  // const [pictures, setPictures] = useState([]);
+  const pictures = [];
   const token = Cookies.get("userToken");
   const history = useHistory();
 

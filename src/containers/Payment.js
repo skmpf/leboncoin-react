@@ -37,16 +37,12 @@ function Payment({ user, stripe }) {
             const stripeResponse = await stripe.createToken({
               userToken: user.token
             });
-
             const stripeToken = stripeResponse.token.id;
-
-            const response = await axios.post("http://localhost:3000/payment", {
-              stripeToken: stripeToken
-              //   description: offer.title,
-              //   amount: offer.price
+            await axios.post("http://localhost:3000/payment", {
+              stripeToken: stripeToken,
+              description: offer.title,
+              amount: offer.price
             });
-
-            console.log(response);
           }}
         >
           Procéder au paiement

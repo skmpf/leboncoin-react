@@ -46,7 +46,7 @@ function Offers() {
                           alt=""
                         />
                       ) : (
-                        <img src={offer.pictures} alt={offer.title} />
+                        <img src={offer.pictures[0]} alt={offer.title} />
                       )}
                       <div className="details">
                         <h3>{offer.title}</h3>

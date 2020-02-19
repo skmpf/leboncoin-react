@@ -37,7 +37,12 @@ function Offer({ user }) {
               {offer.pictures.length === 0 ? (
                 <img src={nophoto} alt={offer.title} />
               ) : (
-                <img src={offer.pictures} alt={offer.title} />
+                <div className="carousel">
+                  {offer.pictures.map(url => {
+                    console.log(offer.pictures);
+                    return <img src={url} alt={offer.title} />;
+                  })}
+                </div>
               )}
 
               <h3>{offer.title}</h3>
