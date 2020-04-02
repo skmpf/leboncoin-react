@@ -22,12 +22,14 @@ function Header(props) {
               Déposer une annonce
             </div>
           </Link>
-          <div className="search-button">
-            <i className="fas fa-search"></i>
-            <p>Rechercher</p>
-          </div>
+          <Link to="/">
+            <div className="search-button header-hover">
+              <i className="fas fa-search"></i>
+              <p>Rechercher</p>
+            </div>
+          </Link>
         </div>
-        <div className="connection">
+        <div className="connection header-hover">
           {props.user !== null ? (
             <Link to="/">
               <div

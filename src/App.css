@@ -35,6 +35,7 @@ button {
   line-height: 44px;
   font-size: 16px;
   font-weight: bold;
+  border: none;
 }
 input {
   font-size: 13px;
@@ -44,6 +45,14 @@ input {
   border: 1px solid #d9e0eb;
   box-sizing: border-box;
   margin-bottom: 23px;
+  padding: 0 5px;
+}
+input:focus,
+button:focus {
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
 }
 textarea {
   font-size: 13px;
@@ -52,6 +61,16 @@ p {
   font-size: 13px;
   line-height: 15px;
   margin-bottom: 19px;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* MEDIA QUERIES */

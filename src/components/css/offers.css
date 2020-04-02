@@ -25,6 +25,7 @@
   flex-direction: row;
   border-radius: 5px;
   margin-bottom: 20px;
+  position: relative;
 }
 .product > img {
   width: 240px;
@@ -45,4 +46,20 @@
 }
 .details span:last-child {
   color: black;
+}
+.photo-count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 1rem;
+  color: white;
+  left: 165px;
+  bottom: 10px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+.photo-count i {
+  margin-right: 5px;
 }

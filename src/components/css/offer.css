@@ -89,3 +89,17 @@
 .user > p:nth-child(3) {
   border: 1px solid #e6ebef;
 }
+.nextButton,
+.prevButton {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  vertical-align: center;
+  margin: 0 50px;
+}
+.slider-control-centerleft > button,
+.slider-control-centerright button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

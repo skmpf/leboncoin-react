@@ -5,6 +5,7 @@
   margin: 0 auto;
   background-color: white;
   margin-top: 35px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,7 +21,7 @@
 .search-box input {
   font-size: 16px;
   background-color: #f4f6f7;
-  color: #8191a0;
+  color: black;
   height: 44px;
   width: 274.5px;
   border: none;

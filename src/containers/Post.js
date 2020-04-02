@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useHistory, Redirect } from "react-router-dom";
 
-function Post({ user }) {
+function Post({ user, fetchOffers }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -105,8 +105,15 @@ function Post({ user }) {
               onClick={event => {
                 event.preventDefault();
                 if (title && description && price) {
+                  // if (typeof price !== Number) {
+                  //   alert("Veuillez rentrer un nombre entier comme prix");
+                  // } else {
                   createPost();
+                  fetchOffers();
                   history.push("/");
+                  // }
+                } else {
+                  alert("Veuillez compléter tous les champs indiqués par un *");
                 }
               }}
             >

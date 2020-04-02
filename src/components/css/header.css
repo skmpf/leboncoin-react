@@ -32,6 +32,10 @@
   margin-left: 43px;
   margin-right: 30px;
   text-decoration: none;
+  transition: 0.2s;
+}
+.deposer-annonce:hover {
+  background-color: #b45c36;
 }
 .deposer-annonce > i {
   font-size: 21.75px;
@@ -45,16 +49,16 @@
   align-items: center;
   position: relative;
 }
-.search-button::after {
-  border-bottom: 3px solid #f56b2a;
+.header-hover::after {
+  border-bottom: 3px solid #ff6e14;
   bottom: 0;
   content: "";
   display: block;
   position: absolute;
-  /* box-sizing: border-box;  */
+  width: 0;
 }
-.search-button:hover {
-  /* border-bottom: solid 3px #f56b2a; */
+.header-hover:hover::after {
+  width: 100%;
 }
 .search-button > i {
   font-size: 29.15px;
@@ -81,10 +85,6 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-}
-.connection a:visited {
-  text-decoration: none;
-  color: black;
 }
 .connection p {
   font-size: 15px;

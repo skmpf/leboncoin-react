@@ -1,12 +1,16 @@
+// import packages
 import React, { useState } from "react";
 import { Elements, StripeProvider } from "react-stripe-elements";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cookies from "js-cookie";
+import axios from "axios";
 
+// import components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+// import containers
 import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
 import SignUp from "./containers/SignUp";
@@ -21,6 +25,19 @@ function App() {
   tokenFromCookie ? (newState = { token: tokenFromCookie }) : (newState = null);
 
   const [user, setUser] = useState(newState);
+  const [offers, setOffers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchOffers = async () => {
+    const response = await axios.get(
+      // "https://leboncoin-api-2003.herokuapp.com/offer/with-count"
+      "http://localhost:3000/offer/with-count"
+    );
+    setOffers(response.data);
+    console.log(response.data);
+
+    setIsLoading(false);
+  };
 
   return (
     <main>
@@ -35,7 +52,7 @@ function App() {
             </StripeProvider>
           </Route>
           <Route path="/offer/post">
-            <Post user={user} />
+            <Post user={user} fetchOffers={fetchOffers} />
           </Route>
           <Route path="/offer/:id">
             <Offer user={user} />
@@ -47,7 +64,11 @@ function App() {
             <SignIn setUser={setUser} />
           </Route>
           <Route exact path="/">
-            <Offers />
+            <Offers
+              fetchOffers={fetchOffers}
+              offers={offers}
+              isLoading={isLoading}
+            />
           </Route>
         </Switch>
         <Footer />

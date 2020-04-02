@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
+import Carousel from "nuka-carousel";
+
 import nophoto from "../assets/img/nophoto.png";
+import Loading from "../components/Loading";
 import "../components/css/offer.css";
 
 const moment = require("moment");
@@ -21,15 +24,17 @@ function Offer({ user }) {
         "http://localhost:3000/offer/" + id
       );
       setOffer(response.data);
+      console.log(response.data);
+
       setIsLoading(false);
     };
     fetchData();
   }, [id]);
 
   return (
-    <>
+    <div className="center">
       {isLoading ? (
-        <p>Loading page</p>
+        <Loading />
       ) : (
         <div className="wrapper offer">
           <div className="product-item">
@@ -37,12 +42,20 @@ function Offer({ user }) {
               {offer.pictures.length === 0 ? (
                 <img src={nophoto} alt={offer.title} />
               ) : (
-                <div className="carousel">
+                <Carousel
+                  className="carousel"
+                  defaultControlsConfig={{
+                    nextButtonClassName: "nextButton",
+                    prevButtonClassName: "prevButton",
+                    nextButtonText: <i class="fas fa-chevron-right"></i>,
+                    prevButtonText: <i class="fas fa-chevron-left"></i>
+                  }}
+                >
                   {offer.pictures.map(url => {
                     console.log(offer.pictures);
                     return <img src={url} alt={offer.title} />;
                   })}
-                </div>
+                </Carousel>
               )}
 
               <h3>{offer.title}</h3>
@@ -61,7 +74,11 @@ function Offer({ user }) {
           </div>
           <div className="user">
             <p>{offer.creator.account.username}</p>
-            <p>17 annonces en ligne</p>
+            {offer.creator.offers > 1 ? (
+              <p>{offer.creator.offers} annonces en ligne</p>
+            ) : (
+              <p>{offer.creator.offers} annonce en ligne</p>
+            )}
             <p></p>
             <div
               className="buy"
@@ -82,7 +99,7 @@ function Offer({ user }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
