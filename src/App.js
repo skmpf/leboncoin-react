@@ -34,8 +34,6 @@ function App() {
       "http://localhost:3000/offer/with-count"
     );
     setOffers(response.data);
-    console.log(response.data);
-
     setIsLoading(false);
   };
 

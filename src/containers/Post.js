@@ -8,7 +8,7 @@ function Post({ user, fetchOffers }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  // const [pictures, setPictures] = useState([]);
+  // const [files, setFiles] = useState({});
   const pictures = [];
   const token = Cookies.get("userToken");
   const history = useHistory();
@@ -19,10 +19,15 @@ function Post({ user, fetchOffers }) {
       formData.append("title", title);
       formData.append("description", description);
       formData.append("price", price);
+      // formData.append("files", files);
 
-      const keys = Object.keys(pictures);
-      for (let key in keys) {
-        formData.append("files", pictures[key]);
+      // const keys = Object.keys(pictures);
+      // for (let key in keys) {
+      //   formData.append("files", pictures[key]);
+      // }
+
+      for (let i = 0; i < pictures.length; i++) {
+        formData.append("files", pictures[i]);
       }
 
       await axios.post(
@@ -94,9 +99,11 @@ function Post({ user, fetchOffers }) {
               type="file"
               multiple
               onChange={event => {
+                // const pictures = [];
                 for (let i = 0; i < event.target.files.length; i++) {
                   pictures.push(event.target.files[i]);
                 }
+                // setFiles(pictures);
               }}
             />
           </li>
@@ -109,8 +116,11 @@ function Post({ user, fetchOffers }) {
                   //   alert("Veuillez rentrer un nombre entier comme prix");
                   // } else {
                   createPost();
-                  fetchOffers();
+                  alert(
+                    "Votre annonce est postée, elle apparaîtra sur notre plateforme dans quelques instants !"
+                  );
                   history.push("/");
+                  fetchOffers();
                   // }
                 } else {
                   alert("Veuillez compléter tous les champs indiqués par un *");

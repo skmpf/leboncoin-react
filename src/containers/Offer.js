@@ -24,8 +24,6 @@ function Offer({ user }) {
         "http://localhost:3000/offer/" + id
       );
       setOffer(response.data);
-      console.log(response.data);
-
       setIsLoading(false);
     };
     fetchData();
@@ -52,7 +50,6 @@ function Offer({ user }) {
                   }}
                 >
                   {offer.pictures.map(url => {
-                    console.log(offer.pictures);
                     return <img src={url} alt={offer.title} />;
                   })}
                 </Carousel>
