@@ -8,7 +8,7 @@ Replica of leboncoin in React. Full stack project including 6 pages: Login, Sign
 	<img
 			width="600"
 			alt="demo"
-			src="https://github.com/sebkpf/leboncoin-react/blob/master/documentation/demo.png">
+			src="https://github.com/sebkpf/leboncoin-react/blob/master/documentation/demo.gif">
 </p>
 
 <p align="center">
