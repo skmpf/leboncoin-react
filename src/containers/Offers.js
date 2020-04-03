@@ -7,7 +7,16 @@ import Card from "../components/Card";
 import Loading from "../components/Loading";
 import Pagination from "../components/Pagination";
 
-function Offers({ fetchData, offers, count, skip, setSkip, isLoading }) {
+function Offers({
+  fetchData,
+  offers,
+  count,
+  skip,
+  setSkip,
+  searchInput,
+  setSearchInput,
+  isLoading
+}) {
   useEffect(() => {
     fetchData();
   }, [skip]);
@@ -18,7 +27,12 @@ function Offers({ fetchData, offers, count, skip, setSkip, isLoading }) {
         <Loading />
       ) : (
         <div className="products wrapper">
-          <Search />
+          <Search
+            fetchData={fetchData}
+            skip={skip}
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+          />
           {offers.length === 0 ? (
             <div>Aucune offre pour le moment</div>
           ) : (

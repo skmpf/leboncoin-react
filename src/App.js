@@ -27,11 +27,12 @@ function App() {
   const [user, setUser] = useState(newState);
   const [data, setData] = useState([]);
   const [skip, setSkip] = useState(0);
+  const [searchInput, setSearchInput] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = useCallback(async () => {
     const response = await axios.get(
-      `http://localhost:3000/offer/with-count?skip=${skip}&limit=3`
+      `https://leboncoin-api-2003.herokuapp.com/offer/with-count?title=${searchInput}&skip=${skip}&limit=3`
     );
     setData(response.data);
     setIsLoading(false);
@@ -64,10 +65,13 @@ function App() {
           <Route exact path="/">
             <Offers
               fetchData={fetchData}
+              setData={setData}
               offers={data.offers}
               count={data.count}
               skip={skip}
               setSkip={setSkip}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
               isLoading={isLoading}
             />
           </Route>

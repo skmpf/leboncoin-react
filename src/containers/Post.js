@@ -23,9 +23,13 @@ function Post({ user, fetchData }) {
         formData.append("files", pictures[i]);
       }
 
-      await axios.post("http://localhost:3000/offer/publish", formData, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await axios.post(
+        "https://leboncoin-api-2003.herokuapp.com/offer/publish",
+        formData,
+        {
+          headers: { Authorization: `Bearer ${token}` }
+        }
+      );
     } catch (error) {
       alert(error.message);
     }

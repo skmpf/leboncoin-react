@@ -20,7 +20,7 @@ function Payment({ user, stripe }) {
       userToken: user.token
     });
     const stripeToken = stripeResponse.token.id;
-    await axios.post("http://localhost:3000/payment", {
+    await axios.post("https://leboncoin-api-2003.herokuapp.com/payment", {
       stripeToken: stripeToken,
       description: offer.title,
       amount: offer.price
