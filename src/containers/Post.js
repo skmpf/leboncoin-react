@@ -4,11 +4,10 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useHistory, Redirect } from "react-router-dom";
 
-function Post({ user, fetchOffers }) {
+function Post({ user, fetchData }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  // const [files, setFiles] = useState({});
   const pictures = [];
   const token = Cookies.get("userToken");
   const history = useHistory();
@@ -19,23 +18,14 @@ function Post({ user, fetchOffers }) {
       formData.append("title", title);
       formData.append("description", description);
       formData.append("price", price);
-      // formData.append("files", files);
-
-      // const keys = Object.keys(pictures);
-      // for (let key in keys) {
-      //   formData.append("files", pictures[key]);
-      // }
 
       for (let i = 0; i < pictures.length; i++) {
         formData.append("files", pictures[i]);
       }
 
-      await axios.post(
-        // "https://leboncoin-api-2003.herokuapp.com/offer/publish",
-        "http://localhost:3000/offer/publish",
-        formData,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      await axios.post("http://localhost:3000/offer/publish", formData, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
     } catch (error) {
       alert(error.message);
     }
@@ -99,11 +89,9 @@ function Post({ user, fetchOffers }) {
               type="file"
               multiple
               onChange={event => {
-                // const pictures = [];
                 for (let i = 0; i < event.target.files.length; i++) {
                   pictures.push(event.target.files[i]);
                 }
-                // setFiles(pictures);
               }}
             />
           </li>
@@ -112,16 +100,12 @@ function Post({ user, fetchOffers }) {
               onClick={event => {
                 event.preventDefault();
                 if (title && description && price) {
-                  // if (typeof price !== Number) {
-                  //   alert("Veuillez rentrer un nombre entier comme prix");
-                  // } else {
                   createPost();
                   alert(
                     "Votre annonce est postée, elle apparaîtra sur notre plateforme dans quelques instants !"
                   );
                   history.push("/");
-                  fetchOffers();
-                  // }
+                  fetchData();
                 } else {
                   alert("Veuillez compléter tous les champs indiqués par un *");
                 }

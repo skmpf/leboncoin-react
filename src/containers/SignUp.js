@@ -17,15 +17,11 @@ function SignUp(props) {
   const createAccount = async () => {
     try {
       await axios
-        .post(
-          // "https://leboncoin-api-2003.herokuapp.com/user/sign_up",
-          "http://localhost:3000/user/sign_up",
-          {
-            email: email,
-            username: name,
-            password: password
-          }
-        )
+        .post("http://localhost:3000/user/sign_up", {
+          email: email,
+          username: name,
+          password: password
+        })
         .then(response => {
           const token = response.data.token;
           props.setUser({ token: token });

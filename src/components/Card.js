@@ -15,7 +15,7 @@ function Card({ offer }) {
         <img src={offer.pictures[0]} alt={offer.title} />
       )}
       <div className="photo-count">
-        <i class="fas fa-camera"></i>
+        <i className="fas fa-camera"></i>
         {offer.pictures.length}
       </div>
       <div className="details">

@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import Search from "../components/Search";
 import Card from "../components/Card";
 import Loading from "../components/Loading";
+import Pagination from "../components/Pagination";
 
-function Offers({ fetchOffers, offers, isLoading }) {
+function Offers({ fetchData, offers, count, skip, setSkip, isLoading }) {
   useEffect(() => {
-    fetchOffers();
-  }, []);
+    fetchData();
+  }, [skip]);
 
   return (
     <div className="center">
@@ -18,15 +19,22 @@ function Offers({ fetchOffers, offers, isLoading }) {
       ) : (
         <div className="products wrapper">
           <Search />
-          {offers.map(offer => {
-            return (
-              <Link key={offer._id} to={"/offer/" + offer._id}>
-                <div className="product">
-                  <Card offer={offer} />
-                </div>
-              </Link>
-            );
-          })}
+          {offers.length === 0 ? (
+            <div>Aucune offre pour le moment</div>
+          ) : (
+            <>
+              {offers.map(offer => {
+                return (
+                  <Link key={offer._id} to={"/offer/" + offer._id}>
+                    <div className="product">
+                      <Card offer={offer} />
+                    </div>
+                  </Link>
+                );
+              })}
+              <Pagination count={count} skip={skip} setSkip={setSkip} />
+            </>
+          )}
         </div>
       )}
     </div>
