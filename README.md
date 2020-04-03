@@ -1,69 +1,84 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# leboncoin clone
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Replica of leboncoin in React. Full stack project including 6 pages: Login, Signup, Home, Offer, Publish and Payment
 
-### `yarn start`
+<p align="center">
+	<img
+			width="600"
+			alt="demo"
+			src="https://github.com/sebkpf/leboncoin-react/blob/master/documentation/demo.png">
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="center">
+  Demo:<a href="https://leboncoin-clone.netlify.com/" target="_blank"> https://leboncoin-clone.netlify.com/</a>
+</p>
+<p align="center">
+ This project was bootstrapped with <a href=https://github.com/facebook/create-react-app. target="_blank">Create React App</a>
+</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**UI**
 
-### `yarn test`
+- Homemade UI without framework inspired by <a href="https://www.leboncoin.fr" target="\_blank">leboncoin</a>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Client**
 
-### `yarn build`
+- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
+- [React Stripe Elements](https://github.com/stripe/react-stripe-elements)
+- [React Loading Elements](https://github.com/jxnblk/loading)
+- [React Nuka Carousel Elements](https://github.com/FormidableLabs/nuka-carousel)
+- [JS Cookie](https://github.com/js-cookie/js-cookie)
+- [Axios](https://github.com/axios/axios)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Running the project
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Clone this repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git clone https://github.com/sebkpf/leboncoin-react.git
+cd leboncoin-react
+```
 
-### `yarn eject`
+Install packages:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When installation is complete, run with:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## leboncoin API
 
-## Learn More
+<a href="https://github.com/sebkpf/leboncoin-backend">https://github.com/sebkpf/leboncoin-backend</a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- <a href="https://nodejs.org/en/" target="\_blank">Node.js</a>
+- <a href="https://www.npmjs.com/package/axios" target="\_blank">axios</a>
+- <a href="https://www.npmjs.com/package/express" target="\_blank">express</a>
+- <a href="https://www.npmjs.com/package/express-formidable" target="\_blank">express-formidable</a>
+- <a href="https://www.npmjs.com/package/cors" target="\_blank">cors</a>
+- <a href="https://www.npmjs.com/package/mongoose" target="\_blank">mongoose</a>
+- <a href="https://www.npmjs.com/package/crypto-js" target="\_blank">crypto-js</a>
+- <a href="https://www.npmjs.com/package/js-md5" target="\_blank">js-md5</a>
+- <a href="https://www.npmjs.com/package/uid2" target="\_blank">uid2</a>
+- <a href="https://www.npmjs.com/package/dotenv" target="\_blank">dotenv</a>
+- <a href="https://www.npmjs.com/package/cloudinary" target="\_blank">Cloudinary</a>
+- <a href="https://www.npmjs.com/package/stripe" target="\_blank">Stripe</a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+- Client deployed with Netlify
+- Server deployed with Heroku
+- MongoDB database hosted on mLab
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Project status
 
-### Analyzing the Bundle Size
+Project is completed but needs to be made responsive
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Contact
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# leboncoin-react
+<a href="https://www.linkedin.com/in/sebastienkempf/" target="_blank">My LinkedIn profile</a>
