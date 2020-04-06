@@ -9,6 +9,7 @@ import axios from "axios";
 // import components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Burger from "./components/Burger";
 
 // import containers
 import Offers from "./containers/Offers";
@@ -29,6 +30,7 @@ function App() {
   const [skip, setSkip] = useState(0);
   const [searchInput, setSearchInput] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [burger, setBurger] = useState(false);
 
   const fetchData = useCallback(async () => {
     const response = await axios.get(
@@ -41,7 +43,20 @@ function App() {
   return (
     <main>
       <Router>
-        <Header user={user} setUser={setUser} />
+        <Header
+          user={user}
+          setUser={setUser}
+          burger={burger}
+          setBurger={setBurger}
+        />
+        {burger && (
+          <Burger
+            user={user}
+            setUser={setUser}
+            burger={burger}
+            setBurger={setBurger}
+          />
+        )}
         <Switch>
           <Route path="/payment">
             <StripeProvider apiKey="pk_test_z8k3Pda4PMn319wPwudsWh1C0001l1liIX">

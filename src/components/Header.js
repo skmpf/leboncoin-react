@@ -5,11 +5,17 @@ import logo from "../assets/img/leboncoin.png";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 
-function Header(props) {
+function Header({ user, setUser, burger, setBurger }) {
   return (
     <div className="header">
       <div className="wrapper menu">
-        <div>
+        <i
+          className="fas fa-bars"
+          onClick={() => {
+            setBurger(!burger);
+          }}
+        ></i>
+        <div className="first-elem">
           <Link to="/">
             <img src={logo} alt="leboncoin-logo" />
           </Link>
@@ -30,12 +36,12 @@ function Header(props) {
           </Link>
         </div>
         <div className="connection header-hover">
-          {props.user !== null ? (
+          {user !== null ? (
             <Link to="/">
               <div
                 onClick={() => {
                   Cookies.remove("userToken");
-                  props.setUser(null);
+                  setUser(null);
                 }}
               >
                 <i className="far fa-user"></i>

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Replica of leboncoin in React. Full stack project including 6 pages: Login, Signup, Home, Offer, Publish and Payment
+Responsive replica of leboncoin in React. Full stack project including 6 pages: Login, Signup, Home, Offer, Publish and Payment
 
 <p align="center">
 	<img
@@ -20,7 +20,7 @@ Replica of leboncoin in React. Full stack project including 6 pages: Login, Sign
 
 **UI**
 
-- Homemade UI without framework inspired by [leboncoin](https://www.leboncoin.fr)
+- Homemade, responsive UI without framework inspired by [leboncoin](https://www.leboncoin.fr)
 
 **Client**
 
@@ -78,7 +78,7 @@ npm start
 
 ## Project status
 
-Project is completed but needs to be made responsive
+Project is completed
 
 ## Contact
 

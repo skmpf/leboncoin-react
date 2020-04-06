@@ -1,6 +1,6 @@
 .sign-up {
   width: 1000px;
-  height: 576px;
+  min-height: 576px;
   margin-top: 44px;
   margin-bottom: 142px;
   background-color: white;
@@ -13,7 +13,7 @@
   margin-top: 30px;
 }
 .sign-up-list {
-  width: 350px;
+  flex: 0.8;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +50,8 @@
   justify-content: space-between;
 }
 .password ul {
-  width: 165px;
+  max-width: 165px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -60,12 +61,16 @@
   display: flex;
   flex-direction: column;
 }
-.password input {
-  width: 165px;
+.sign-up-list input {
+  width: 100%;
 }
 .password li:nth-child(2) {
   border: none;
   margin-bottom: 35px;
+}
+.password ul > li:first-child {
+  height: 30px;
+  margin-bottom: 19px;
 }
 .sign-up-list li:nth-child(8) {
   display: inline;
@@ -75,7 +80,6 @@
   height: auto;
   margin-right: 10px;
   margin-bottom: 10px;
-  /* border: solid 3px #f56b2a; */
 }
 .sign-up-list > li:last-child input {
   background: #4183d7;
@@ -84,12 +88,10 @@
   font-size: 16px;
   font-weight: bold;
 }
-.sign-up-list > li:last-child {
-  margin-bottom: 0;
-}
 .sign-up-infos {
-  width: 431px;
+  flex: 1;
   margin-left: 55px;
+  padding-right: 15px;
 }
 .sign-up-infos p {
   font-size: 14px;

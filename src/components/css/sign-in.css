@@ -1,5 +1,5 @@
 .sign-in {
-  width: 715px;
+  max-width: 715px;
   margin-top: 44px;
   margin-bottom: 142px;
   background-color: white;
@@ -11,6 +11,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  max-width: 560px;
+  width: 100%;
 }
 .sign-in p {
   font-size: 16px;
@@ -18,7 +21,7 @@
   line-height: 19px;
 }
 .sign-in li {
-  width: 560px;
+  width: 100%;
 }
 .sign-in li:first-child {
   display: flex;
@@ -28,7 +31,8 @@
 }
 .sign-in input,
 .sign-in button {
-  width: 560px;
+  max-width: 560px;
+  width: 100%;
   height: 44px;
   border-radius: 5px;
   line-height: 19px;
@@ -62,4 +66,7 @@
   margin-bottom: 27px;
   color: #4183d7;
   border: 1px solid #4183d7;
+}
+.sign-in li:last-child button {
+  background-color: white;
 }
