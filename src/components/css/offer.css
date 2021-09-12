@@ -9,6 +9,7 @@
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 27px;
   width: 700px;
+  border-radius: 5px;
 }
 .product-details img {
   max-height: 393.56px;
@@ -19,6 +20,7 @@
 .carousel {
   margin-bottom: 26.44px;
   background-color: #cbd1d8;
+  border-radius: 5px;
 }
 .product-details h3 {
   margin-left: 30px;
@@ -51,6 +53,10 @@
   align-items: center;
   justify-content: center;
 }
+.buy:hover {
+  cursor: pointer;
+  background-color: #b45c36;
+}
 .buy i {
   margin-right: 13px;
 }
@@ -68,11 +74,12 @@
 .user {
   width: 279px;
   height: 195px;
-  margin-left: 10px;
+  margin-left: 20px;
   background-color: white;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
 }
 .user > p:first-child {
   font-size: 23px;
