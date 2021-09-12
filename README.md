@@ -15,6 +15,20 @@ Responsive replica of leboncoin in React. Full stack project including 6 pages: 
   Demo:<a href="https://leboncoin-clone.netlify.com/" target="_blank"> https://leboncoin-clone.netlify.com/</a>
 </p>
 <p align="center">
+	Login credentials:
+	
+	email: demo@mail.com
+	password: demo
+</p>
+<p align="center">
+	Stripe test account details:
+	
+	Card number: 4242424242424242
+	Expriry date: 04/24
+	CVC: 242
+	Postal code: 75000
+</p>
+<p align="center">
  This project was bootstrapped with <a href=https://github.com/facebook/create-react-app. target="_blank">Create React App</a>
 </p>
 
