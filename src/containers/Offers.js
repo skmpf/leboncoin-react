@@ -24,7 +24,9 @@ function Offers({
   return (
     <div className="center">
       {isLoading ? (
-        <Loading />
+        <div className="loading">
+          <Loading />
+        </div>
       ) : (
         <div className="products wrapper">
           <Search

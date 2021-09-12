@@ -62,7 +62,7 @@ function Payment({ user, stripe }) {
               <Loading />
             </li>
           ) : (
-            <li>
+            <li className="">
               <button
                 onClick={async () => {
                   setIsLoading(true);

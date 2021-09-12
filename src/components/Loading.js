@@ -1,8 +1,9 @@
 import React from "react";
-import ReactLoading from "react-loading";
 
-const Loading = ({ type, color }) => (
-  <ReactLoading type={"spin"} color={"#ff6e14"} height={"25%"} width={"25%"} />
+import loading from "../assets/img/loading.gif";
+
+const Loading = () => (
+  <img calssName="loading-img" src={loading} alt="loading"></img>
 );
 
 export default Loading;

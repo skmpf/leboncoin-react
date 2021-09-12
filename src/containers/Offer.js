@@ -31,7 +31,9 @@ function Offer({ user }) {
   return (
     <div className="center">
       {isLoading ? (
-        <Loading />
+        <div className="loading">
+          <Loading />
+        </div>
       ) : (
         <div className="wrapper offer">
           <div className="product-item">

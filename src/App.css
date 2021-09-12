@@ -74,6 +74,14 @@ a:visited {
   align-items: center;
   justify-content: center;
 }
+.loading {
+  height: calc(100vh - 60px);
+  margin-top: 40vh;
+}
+.loading-img {
+  width: 10vh;
+  height: auto;
+}
 
 /* MEDIA QUERIES */
 @media (min-width: 970px) {
