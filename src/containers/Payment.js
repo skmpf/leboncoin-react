@@ -17,13 +17,13 @@ function Payment({ user, stripe }) {
 
   const handlePayment = async () => {
     const stripeResponse = await stripe.createToken({
-      userToken: user.token
+      userToken: user.token,
     });
     const stripeToken = stripeResponse.token.id;
     await axios.post("https://leboncoin-api-2003.herokuapp.com/payment", {
       stripeToken: stripeToken,
       description: offer.title,
-      amount: offer.price
+      amount: offer.price,
     });
     setIsPaid(true);
   };
@@ -62,7 +62,7 @@ function Payment({ user, stripe }) {
               <Loading />
             </li>
           ) : (
-            <li className="">
+            <li>
               <button
                 onClick={async () => {
                   setIsLoading(true);
