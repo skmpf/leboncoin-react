@@ -17,12 +17,12 @@ function SignUp(props) {
   const createAccount = async () => {
     try {
       await axios
-        .post("https://leboncoin-api-2003.herokuapp.com/user/sign_up", {
+        .post("https://leboncoin-api-2003.fly.dev/user/sign_up", {
           email: email,
           username: name,
-          password: password
+          password: password,
         })
-        .then(response => {
+        .then((response) => {
           const token = response.data.token;
           props.setUser({ token: token });
           Cookies.set("userToken", token, { expires: 7 });
@@ -97,7 +97,7 @@ function SignUp(props) {
             name="name"
             required
             value={name}
-            onChange={event => {
+            onChange={(event) => {
               setName(event.target.value);
             }}
           />
@@ -111,7 +111,7 @@ function SignUp(props) {
             name="email"
             required
             value={email}
-            onChange={event => {
+            onChange={(event) => {
               setEmail(event.target.value);
             }}
           />
@@ -127,7 +127,7 @@ function SignUp(props) {
                 name="password"
                 required
                 value={password}
-                onChange={event => {
+                onChange={(event) => {
                   setPassword(event.target.value);
                 }}
               />
@@ -143,7 +143,7 @@ function SignUp(props) {
                 name="confirm"
                 required
                 value={confirm}
-                onChange={event => {
+                onChange={(event) => {
                   setConfirm(event.target.value);
                 }}
               />
@@ -153,7 +153,7 @@ function SignUp(props) {
         <li>
           <input
             type="checkbox"
-            onChange={event => {
+            onChange={(event) => {
               setIsChecked(!isChecked);
             }}
           />
@@ -166,7 +166,7 @@ function SignUp(props) {
           <input
             type="submit"
             value="Créer mon Compte Personnel"
-            onClick={event => {
+            onClick={(event) => {
               event.preventDefault();
               if (password !== confirm) {
                 alert("Les deux mots de passe doivent être identiques");

@@ -34,7 +34,7 @@ function App() {
 
   const fetchData = useCallback(async () => {
     const response = await axios.get(
-      `https://leboncoin-api-2003.herokuapp.com/offer/with-count?title=${searchInput}&skip=${skip}&limit=3`
+      `https://leboncoin-api-2003.fly.dev/offer/with-count?title=${searchInput}&skip=${skip}&limit=3`
     );
     setData(response.data);
     setIsLoading(false);

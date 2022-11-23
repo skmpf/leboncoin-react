@@ -13,11 +13,11 @@ function SignIn(props) {
   const logIn = async () => {
     try {
       await axios
-        .post("https://leboncoin-api-2003.herokuapp.com/user/log_in", {
+        .post("https://leboncoin-api-2003.fly.dev/user/log_in", {
           email: email,
-          password: password
+          password: password,
         })
-        .then(response => {
+        .then((response) => {
           const token = response.data.token;
           props.setUser({ token: token });
           Cookies.set("userToken", token, { expires: 7 });
@@ -43,7 +43,7 @@ function SignIn(props) {
             name="email"
             required
             value={email}
-            onChange={event => {
+            onChange={(event) => {
               setEmail(event.target.value);
             }}
           />
@@ -57,14 +57,14 @@ function SignIn(props) {
             name="password"
             required
             value={password}
-            onChange={event => {
+            onChange={(event) => {
               setPassword(event.target.value);
             }}
           />
         </li>
         <li>
           <button
-            onClick={event => {
+            onClick={(event) => {
               event.preventDefault();
               if (email && password) {
                 logIn();

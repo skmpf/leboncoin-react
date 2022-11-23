@@ -20,7 +20,7 @@ function Offer({ user }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://leboncoin-api-2003.herokuapp.com/offer/" + id
+        "https://leboncoin-api-2003.fly.dev/offer/" + id
       );
       setOffer(response.data);
       setIsLoading(false);
@@ -47,10 +47,10 @@ function Offer({ user }) {
                     nextButtonClassName: "nextButton",
                     prevButtonClassName: "prevButton",
                     nextButtonText: <i class="fas fa-chevron-right"></i>,
-                    prevButtonText: <i class="fas fa-chevron-left"></i>
+                    prevButtonText: <i class="fas fa-chevron-left"></i>,
                   }}
                 >
-                  {offer.pictures.map(url => {
+                  {offer.pictures.map((url) => {
                     return <img src={url} alt={offer.title} />;
                   })}
                 </Carousel>
@@ -80,13 +80,13 @@ function Offer({ user }) {
             <p></p>
             <div
               className="buy"
-              onClick={event => {
+              onClick={(event) => {
                 event.preventDefault();
                 if (user === null) {
                   history.push("/user/sign_in");
                 } else {
                   history.push("/payment", {
-                    offer
+                    offer,
                   });
                 }
               }}

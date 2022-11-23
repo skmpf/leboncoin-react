@@ -24,10 +24,10 @@ function Post({ user, fetchData }) {
       }
 
       await axios.post(
-        "https://leboncoin-api-2003.herokuapp.com/offer/publish",
+        "https://leboncoin-api-2003.fly.dev/offer/publish",
         formData,
         {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
     } catch (error) {
@@ -53,7 +53,7 @@ function Post({ user, fetchData }) {
               type="text"
               required
               value={title}
-              onChange={event => {
+              onChange={(event) => {
                 setTitle(event.target.value);
               }}
             />
@@ -66,7 +66,7 @@ function Post({ user, fetchData }) {
               type="text"
               required
               value={description}
-              onChange={event => {
+              onChange={(event) => {
                 setDescription(event.target.value);
               }}
             />
@@ -79,7 +79,7 @@ function Post({ user, fetchData }) {
               type="number"
               required
               value={price}
-              onChange={event => {
+              onChange={(event) => {
                 setPrice(event.target.value);
               }}
             />
@@ -92,7 +92,7 @@ function Post({ user, fetchData }) {
             <input
               type="file"
               multiple
-              onChange={event => {
+              onChange={(event) => {
                 for (let i = 0; i < event.target.files.length; i++) {
                   pictures.push(event.target.files[i]);
                 }
@@ -101,7 +101,7 @@ function Post({ user, fetchData }) {
           </li>
           <li>
             <button
-              onClick={event => {
+              onClick={(event) => {
                 event.preventDefault();
                 if (title && description && price) {
                   createPost();
